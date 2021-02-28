@@ -12,60 +12,51 @@ namespace ConsoleAppProject.App01
     /// </author>
     public class DistanceConverter
     {
-        double milesFromFeet;
-        double feetFromMiles;
-        double miles;
-        double milesForMts;
-        double miles2;
-        double metresFromMiles;
-        double feet;
-        public void Run() /**/
+        string selectedUnitFrom;
+        string selectedUnitTo;
+        string valueToConvert;
+        double toDistance;
+        double fromDistance;
+
+        public void Run()
         {
-            OutputHeading(); /**/
-            InputDistances();
+            OutputHeading();
+            SelectDistanceFrom();
+            SelectDistanceTo();
+            ConvertMenu();
+            InputDistance();
+            CalculateDistance();
             OutputResult();
         }
-
-        private void OutputHeading() /**/
+        private void OutputHeading()
         {
-            Console.WriteLine("=========================");
-            Console.WriteLine("=   DISTANCE CONVERTER  =");
-            Console.WriteLine("=     Miles to feet     =");
-            Console.WriteLine("=     Feet to Miles     =");
-            Console.WriteLine("=    Miles to Metres    =");
-            Console.WriteLine("=    by FELIPE SCHOL    =");
-            Console.WriteLine("=========================");
-            Console.WriteLine();
 
         }
-        private void InputDistances() /**/
+        private void SelectDistanceFrom()
         {
-            Console.Write("Please enter the desired number of miles > "); /**/
-            string valueToConvert1 = Console.ReadLine(); /**/
-            miles = Convert.ToDouble(valueToConvert1); /**/
-            feetFromMiles = miles * 5280;
 
-            Console.Write("Please enter the desired number of feet > ");
-            string valueToConvert2 = Console.ReadLine();
-            feet = Convert.ToDouble(valueToConvert2);
-            milesFromFeet = feet / 5280;
+        }
+        private void SelectDistanceTo()
+        {
 
+        }
+        private void ConvertMenu()
+        {
 
-            Console.Write("Please enter the desired number of Miles > ");
-            string valueToConvert3 = Console.ReadLine();
-            miles2 = Convert.ToDouble(valueToConvert3);
-            metresFromMiles = miles2 * 1609.34;
+        }
+        private void InputDistance()
+        {
 
+        }
+        private void CalculateDistance()
+        {
+
+        }
+        private void OutputResult()
+        {
 
         }
         
-        private void OutputResult() /**/
-        {
-            Console.WriteLine();
-            Console.WriteLine(miles + " Miles is " + feetFromMiles + " Feet."); /**/
-            Console.WriteLine(feet + " Feet is " + milesFromFeet + " Miles");
-            Console.WriteLine(miles2 + " Miles is " + metresFromMiles + " Metres");
-        }
 
 
 
@@ -110,4 +101,59 @@ namespace ConsoleAppProject.App01
 //{
 //    Console.WriteLine(); 
 //    Console.WriteLine(miles + " Miles is " + feet + " feet."); /**/
+//}
+//FEATURE STAGE 2 -->
+//double milesFromFeet;
+//double feetFromMiles;
+//double miles;
+//double milesForMts;
+//double miles2;
+//double metresFromMiles;
+//double feet;
+//public void Run() /**/
+//{
+//    OutputHeading(); /**/
+//    InputDistances();
+//    OutputResult();
+//}
+
+//private void OutputHeading() /**/
+//{
+//    Console.WriteLine("=========================");
+//    Console.WriteLine("=   DISTANCE CONVERTER  =");
+//    Console.WriteLine("=     Miles to feet     =");
+//    Console.WriteLine("=     Feet to Miles     =");
+//    Console.WriteLine("=    Miles to Metres    =");
+//    Console.WriteLine("=    by FELIPE SCHOL    =");
+//    Console.WriteLine("=========================");
+//    Console.WriteLine();
+
+//}
+//private void InputDistances() /**/
+//{
+//    Console.Write("Please enter the desired number of miles > "); /**/
+//    string valueToConvert1 = Console.ReadLine(); /**/
+//    miles = Convert.ToDouble(valueToConvert1); /**/
+//    feetFromMiles = miles * 5280;
+
+//    Console.Write("Please enter the desired number of feet > ");
+//    string valueToConvert2 = Console.ReadLine();
+//    feet = Convert.ToDouble(valueToConvert2);
+//    milesFromFeet = feet / 5280;
+
+
+//    Console.Write("Please enter the desired number of Miles > ");
+//    string valueToConvert3 = Console.ReadLine();
+//    miles2 = Convert.ToDouble(valueToConvert3);
+//    metresFromMiles = miles2 * 1609.34;
+
+
+//}
+
+//private void OutputResult() /**/
+//{
+//    Console.WriteLine();
+//    Console.WriteLine(miles + " Miles is " + feetFromMiles + " Feet."); /**/
+//    Console.WriteLine(feet + " Feet is " + milesFromFeet + " Miles");
+//    Console.WriteLine(miles2 + " Miles is " + metresFromMiles + " Metres");
 //}
