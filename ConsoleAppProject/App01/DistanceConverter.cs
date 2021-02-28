@@ -30,11 +30,12 @@ namespace ConsoleAppProject.App01
             Console.WriteLine("=    Miles & feet    =");
             Console.WriteLine("=   by FELIPE SCHOL  =");
             Console.WriteLine("======================");
+            Console.WriteLine();
 
         }
         private void InputMiles() /**/
         {
-            Console.WriteLine("Please enter the desired number of miles > "); /**/
+            Console.Write("Please enter the desired number of miles > "); /**/
             string valueToConvert = Console.ReadLine(); /**/
             miles = Convert.ToDouble(valueToConvert); /**/
         }
@@ -44,7 +45,8 @@ namespace ConsoleAppProject.App01
         }
         private void OutputResult() /**/ 
         {
-            Console.WriteLine(miles + " Miles is " + feet + "feet."); /**/
+            Console.WriteLine(); 
+            Console.WriteLine(miles + " Miles is " + feet + " feet."); /**/
         }
 
 
