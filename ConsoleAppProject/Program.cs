@@ -26,8 +26,7 @@ namespace ConsoleAppProject
             DistanceConverter converter = new DistanceConverter();
             converter.Run();
 
-            BMI bmiCalculator = new BMI();
-            bmiCalculator.Run();
+           
 
 
             // Using an extension method for each enumeration

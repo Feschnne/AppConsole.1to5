@@ -29,7 +29,7 @@ namespace ConsoleAppProject.App02
             Console.WriteLine("==  by FELIPE SCHOL ==");
             Console.WriteLine("======================");
 
-            Console.WriteLine("Please choose between Imperial or Metrical Units > ");
+            Console.Write("Please choose between Imperial or Metrical Units > ");
             Console.WriteLine("");
             Console.WriteLine("1. Imperial Units");
             Console.WriteLine("2. Metrical Units");
@@ -51,7 +51,7 @@ namespace ConsoleAppProject.App02
                 heightInchesCalc = Convert.ToDouble(heightInches);
 
                 BMIresult = weightPoundsCalc * 703 / Math.Pow(heightInchesCalc, 2);
-                if (BMIresult >)
+                if (BMIresult > 18 )
                 {
 
                 } 
