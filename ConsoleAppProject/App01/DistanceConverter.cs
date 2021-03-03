@@ -23,38 +23,110 @@ namespace ConsoleAppProject.App01
             OutputHeading();
             SelectDistanceFrom();
             SelectDistanceTo();
-            ConvertMenu();
             InputDistance();
+            ConvertMenu();
             CalculateDistance();
             OutputResult();
         }
         private void OutputHeading()
         {
-
+            Console.WriteLine();
+            Console.WriteLine("=========================");
+            Console.WriteLine("=   DISTANCE CONVERTER  =");
+            Console.WriteLine("= Miles & Metres & Feet =");
+            Console.WriteLine("=    by FELIPE SCHOL    =");
+            Console.WriteLine("=========================");
+            Console.WriteLine();
         }
         private void SelectDistanceFrom()
         {
-
+            Console.WriteLine("Please choose the unit distance to convert from: ");
+            Console.WriteLine("1. Miles");
+            Console.WriteLine("2. Metres");
+            Console.WriteLine("3. Feet");
+            Console.WriteLine();
+            selectedUnitFrom = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine("Distance from, chosen: " + selectedUnitFrom);
         }
         private void SelectDistanceTo()
         {
-
-        }
-        private void ConvertMenu()
-        {
-
+            Console.WriteLine();
+            Console.Write("Please choose the unit distance to convert to: ");
+            selectedUnitTo = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine("Distance to, chosen: " + selectedUnitTo);
         }
         private void InputDistance()
         {
+            Console.Write("Please enter the desired number of " + selectedUnitFrom + " > ");
+            valueToConvert = Console.ReadLine();
+            fromDistance = Convert.ToDouble(valueToConvert);
+        }
+        private void ConvertMenu()
+        {
+            if (selectedUnitFrom == "1")
+            {
+                selectedUnitFrom = "Miles";
 
+            }
+            if (selectedUnitFrom == "2")
+            {
+                selectedUnitFrom = "Metres";
+
+            }
+            if (selectedUnitFrom == "3")
+            {
+                selectedUnitFrom = "Feet";
+
+            }
+            if (selectedUnitTo == "1")
+            { 
+                selectedUnitTo = "Miles";
+
+            }
+            if (selectedUnitTo == "2")
+            {
+                selectedUnitTo = "Metres";
+
+            }
+            if (selectedUnitTo == "3")
+            {
+                selectedUnitTo = "Feet";
+
+            }
         }
         private void CalculateDistance()
         {
-
+            if (selectedUnitFrom == "Miles" && selectedUnitTo == "Metres")
+            {
+                toDistance = fromDistance * 1609.34;
+            }
+            if (selectedUnitFrom == "Miles" && selectedUnitTo == "Feet")
+            {
+                toDistance = fromDistance * 5280;
+            }
+            if (selectedUnitFrom == "Metres" && selectedUnitTo == "Miles")
+            {
+                toDistance = fromDistance * 0.000621371;
+            }
+            if (selectedUnitFrom == "Metres" && selectedUnitTo == "Feet")
+            {
+                toDistance = fromDistance * 3.28084;
+            }
+            if (selectedUnitFrom == "Feet" && selectedUnitTo == "Miles")
+            {
+                toDistance = fromDistance * 0.00018939394545455;
+            }
+            if (selectedUnitFrom == "Feet" && selectedUnitTo == "Metres")
+            {
+                toDistance = fromDistance * 0.3048;
+            }
         }
         private void OutputResult()
         {
-
+            Console.WriteLine();
+            Console.WriteLine("The result is " + toDistance + " " + selectedUnitTo);
         }
         
 

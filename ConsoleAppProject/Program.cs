@@ -1,5 +1,6 @@
 ﻿
 using ConsoleAppProject.App01;
+using ConsoleAppProject.App02;
 using System;
 
 namespace ConsoleAppProject
@@ -24,6 +25,10 @@ namespace ConsoleAppProject
 
             DistanceConverter converter = new DistanceConverter();
             converter.Run();
+
+            BMI bmiCalculator = new BMI();
+            bmiCalculator.Run();
+
 
             // Using an extension method for each enumeration
             //Console.WriteLine("Using MyEnum Extension Method!\n");
