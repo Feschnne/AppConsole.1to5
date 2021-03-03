@@ -5,7 +5,7 @@ namespace ConsoleAppProject.App01
     /// This app contains three different stages:
     /// 1. Create an app to convert from Miles to Feet getting user input.
     /// 2. Create an app to convert Miles to Feet & Feet to Miles, & Miles to Metres
-    /// 3. Create an app where the user is able to select which unit to convert from and which unit to convert to. (If possible Movile app version)
+    /// 3. Create an app where allowing the to select which unit to convert from and which unit to convert to. (If possible Movile app version)
     /// </summary>
     /// <author>
     /// Felipe Schol Negrin 0.1
