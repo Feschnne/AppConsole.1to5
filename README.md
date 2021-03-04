@@ -1,11 +1,11 @@
 # C# Console Applications App01 to App05
 | Author | Details |
 | ---- | ---- |
-**Name**: | Student Name  |
-**Student ID**: | 12345678 |
-**Course:** | Computing |
-**Module**: | CO453     |
-**Started**: | January 2021 |    
+**Name**: | Felipe Schol  |
+**Student ID**: | 21910498 |
+**Course:** | Artificial Intelligence |
+**Module**: | CO453  |
+**Started**: | February 2021 |    
 
 1. App01: Distance Converter
 2. App02: BMI Calculator
