@@ -26,8 +26,8 @@ namespace ConsoleAppProject
             DistanceConverter converter = new DistanceConverter();
             converter.Run();
 
-            BMI converter = new BMI();
-            converter.Run(); 
+            BMI converter2 = new BMI();
+            converter2.Run(); 
 
            
 

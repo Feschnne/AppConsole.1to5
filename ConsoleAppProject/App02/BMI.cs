@@ -9,59 +9,123 @@ namespace ConsoleAppProject.App02
     /// </author>
     public class BMI
     {
-        string selectedUni;
+        string selectedUnit;
         double BMIresult;
-        double weightPoundsCalc;
-        double heightInchesCalc;
+        double BMIresult2;
+        double heightInches;
+        double weightPounds;
+        double heightMetres;
+        double weightKg;
+
         public void Run()
         {
-            OutputHeading();
-            ConvertMenu();
+            OutputHeading1();
+            InputUnit();
+            OutputHealthMessage();
             //InputDistances();
         }
 
 
-        private void OutputHeading()
+        private void OutputHeading1()
         {
 
+            Console.WriteLine();
             Console.WriteLine("======================");
             Console.WriteLine("==  BMI CALCULATOR  ==");
             Console.WriteLine("==  by FELIPE SCHOL ==");
             Console.WriteLine("======================");
-
-            Console.Write("Please choose between Imperial or Metrical Units > ");
+            Console.WriteLine();
+          
+            
+        }
+        private void InputUnit()
+        {
+            Console.Write("Please choose: Imperial or Metrical Units > ");
             Console.WriteLine("");
             Console.WriteLine("1. Imperial Units");
             Console.WriteLine("2. Metrical Units");
-            selectedUni = Console.ReadLine();
-            
+            selectedUnit = Console.ReadLine();  
         }
-        private void ConvertMenu()
+        private void OutputHealthMessage()
         {
-            if (selectedUni == "1")
+            if (selectedUnit == "1")
             {
-                selectedUni = "Imperial Units";
+                selectedUnit = "Imperial Units";
+                Console.WriteLine();
+                Console.WriteLine("You have chosen " + selectedUnit);
 
                 Console.WriteLine("Please enter your weight in pounds > ");
-                string weightPounds /*onlyweight?*/ = Console.ReadLine();
-                weightPoundsCalc = Convert.ToDouble(weightPounds);
+                weightPounds = Convert.ToDouble(Console.ReadLine());
 
                 Console.WriteLine("Please enter your height in inches > ");
-                string heightInches /*onlyheight?*/ = Console.ReadLine();
-                heightInchesCalc = Convert.ToDouble(heightInches);
+                heightInches = Convert.ToDouble(Console.ReadLine());
 
-                BMIresult = weightPoundsCalc * 703 / Math.Pow(heightInchesCalc, 2);
-                if (BMIresult > 18 )
+
+                BMIresult = weightPounds * 703 / (heightInches * heightInches);
+                
+                if ( BMIresult <= 18.49 ) 
                 {
-
-                } 
-
-                Console.WriteLine("The result is: " + BMIresult);
+                Console.WriteLine("Your BMI is > " + BMIresult + "You are underweight");
+                }
+                if ( BMIresult >= 18.50 && BMIresult <= 24.9 )
+                {
+                Console.WriteLine("Your BMI is > " + BMIresult + "You are normal");
+                }
+                if ( BMIresult >= 25.0 && BMIresult <= 29.9 )
+                {
+                Console.WriteLine("Your BMI is > " + BMIresult + "You are overweight");
+                }
+                if (BMIresult >= 30.0 &&  BMIresult <= 34.9 ) 
+                {
+                Console.WriteLine("Your BMI is > " + BMIresult + "You are Obese Class |");
+                }
+                if (BMIresult >= 35.0 && BMIresult <= 39.9 ) 
+                {
+                Console.WriteLine("Your BMI is > " + BMIresult + "You are Obese Class ||");
+                }
+                if (BMIresult >= 40.0)
+                {
+                Console.WriteLine("Your BMI is > " + BMIresult + "You are Obese Class |||");
+                }  
+                
+                Console.WriteLine("Your BMI is: " + BMIresult);
             }
-            if (selectedUni == "2")
+      
+            if(selectedUnit == "2")
             {
-
-            }
+            Console.Write("Please enter the your weight in kg > ");
+                weightKg = Convert.ToDouble(Console.ReadLine());
+                
+                Console.Write("Please enter your height in metres > ");
+                heightMetres = Convert.ToDouble(Console.ReadLine());
+                
+                BMIresult2 = weightKg / (heightMetres * heightMetres);
+                
+                if (BMIresult2 <=18.50)
+                {
+                    Console.WriteLine("Your BMI is > " + BMIresult + "underweight");
+                }    
+                if (BMIresult2 > 18.50 && BMIresult2 <= 24.9) 
+                {
+                    Console.WriteLine("Your BMI is > " + BMIresult + "You are normal");
+                }
+                if (BMIresult2 >= 25 && BMIresult2 <= 29.9);
+                {
+                    Console.WriteLine("Your BMI is > " + BMIresult + "You are overweight");
+                }
+                if (BMIresult2 >= 30 && BMIresult2 <= 34.9);
+                {
+                    Console.WriteLine("Your BMI is > " + BMIresult + "You are Obese Class |");
+                }
+                if (BMIresult2 >= 35 && BMIresult2 <= 39.9);
+                {
+                    Console.WriteLine("Your BMI is > " + BMIresult + "You are Obese Class ||");
+                }
+                if (BMIresult2 >= 40)
+                {
+                    Console.WriteLine("Your BMI is > " + BMIresult + "You are Obese Class |||");
+                }
+            }  
         }
     }
 }
