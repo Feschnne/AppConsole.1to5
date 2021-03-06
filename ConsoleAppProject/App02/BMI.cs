@@ -7,8 +7,9 @@ namespace ConsoleAppProject.App02
     /// <author>
     /// Felipe Schol  0.1
     /// </author>
-    public class BMI
+    public class BMI 
     {
+        // Variables are declared with its type.
         string selectedUnit;
         double BMIresult;
         double BMIresult2;
@@ -38,15 +39,15 @@ namespace ConsoleAppProject.App02
           
             
         }
-        private void InputUnit()
+        private void InputUnit() // This method is used to allow the user select either metrical or imperial units.
         {
             Console.Write("Please choose: Imperial or Metrical Units > ");
             Console.WriteLine("");
             Console.WriteLine("1. Imperial Units");
             Console.WriteLine("2. Metrical Units");
-            selectedUnit = Console.ReadLine();  
+            selectedUnit = Console.ReadLine();  // We assigned a value for the variable declared beofre. In this case is assigned the user input
         }
-        private void OutputHealthMessage()
+        private void OutputHealthMessage() // I used this method to tell the proram what to do en each situation (Imperial or Metrical=
         {
             if (selectedUnit == "1")
             {
@@ -59,15 +60,15 @@ namespace ConsoleAppProject.App02
 
                 Console.WriteLine("Please enter your height in inches > ");
                 heightInches = Convert.ToDouble(Console.ReadLine());
+                // values are assigned to variables declared before. 
 
-
-                BMIresult = weightPounds * 703 / (heightInches * heightInches);
+                BMIresult = weightPounds * 703 / (heightInches * heightInches); // The formula is declared after the user input is gotten.
                 
                 if ( BMIresult <= 18.49 ) 
                 {
-                Console.WriteLine("Your BMI is > " + BMIresult + "You are underweight");
+                Console.WriteLine("Your BMI is > " + BMIresult + "You are underweight");// The result of the BMI is displayed with a little comment.
                 }
-                if ( BMIresult >= 18.50 && BMIresult <= 24.9 )
+                if ( BMIresult >= 18.50 && BMIresult <= 24.9 ) // Operators are used to separate the possibilities of the output result. 
                 {
                 Console.WriteLine("Your BMI is > " + BMIresult + "You are normal");
                 }
@@ -87,8 +88,6 @@ namespace ConsoleAppProject.App02
                 {
                 Console.WriteLine("Your BMI is > " + BMIresult + "You are Obese Class |||");
                 }  
-                
-                Console.WriteLine("Your BMI is: " + BMIresult);
             }
       
             if(selectedUnit == "2")
