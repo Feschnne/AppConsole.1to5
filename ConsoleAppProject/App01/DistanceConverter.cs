@@ -10,18 +10,20 @@ namespace ConsoleAppProject.App01
     /// <author>
     /// Felipe Schol Negrin 0.1
     /// </author>
-    public class DistanceConverter // Creando una clase que va a contener toda la programacion que va a llevar a cabpo esta aplicacion
+    public class DistanceConverter // Creating a class which will contain methods inside it.
     {
-     
-        string selectedUnitFrom;// antes de llamar a cualquier metodo vamos a declarar las variables que estaran dentro de nuestra programacion
-        string selectedUnitTo;// declaramos como string aquellas que el usuario va a crear el input
-        string valueToConvert;//
-        double toDistance;// declaramos como doble aquellas variables que necesitaremos con numeros para llevar a cabo el calculo
-        double fromDistance;//
+        // Declaring variables
+        // 3 variables type string to get user input
+        // Then 2 variables type double to use for calculations. 
+        string selectedUnitFrom;
+        string selectedUnitTo;
+        string valueToConvert;
+        double toDistance;
+        double fromDistance;
 
-        public void Run()// creamos un public void donde todos nuestros diferentes sub metodos quedaran dentro.
+        public void Run()// We create a public method which contains different private methods to run the program.
         {
-            OutputHeading();// todos los metodos son declarados antes de su programacion para avisar al programa que queremos ejecutar esos metodos
+            OutputHeading();// All private methods are declared first to tell the program that we want to run them. 
             SelectDistanceFrom();
             SelectDistanceTo();
             ConvertUnitFrom();
@@ -30,39 +32,39 @@ namespace ConsoleAppProject.App01
             CalculateDistance();
             OutputResult();
         }
-        private void OutputHeading()// en este metodo añadire la forma y aspecto que le quiero dar a mi heading
+        private void OutputHeading()// In this method we add the shape of the program by using Console.WriteLine()'s.
         {
             Console.WriteLine();
-            Console.WriteLine("=========================");// simplemente utilizamos Console.WriteLine para "dibujar" nuestra aplicacion
+            Console.WriteLine("=========================");
             Console.WriteLine("=   DISTANCE CONVERTER  =");
             Console.WriteLine("= Miles & Metres & Feet =");
             Console.WriteLine("=    by FELIPE SCHOL    =");
             Console.WriteLine("=========================");
             Console.WriteLine();
         }
-        private void SelectDistanceFrom()// en este metodo le daremos la posibilidad al usuario de elegir entre 3 opciones para convertir desde.
+        private void SelectDistanceFrom()// In this method the user is allowed to choose a unit to convert from. este metodo le daremos la posibilidad al usuario de elegir entre 3 opciones para convertir desde.
         {
             Console.WriteLine("Please choose the unit distance to convert from: ");
             Console.WriteLine("1. Miles");
             Console.WriteLine("2. Metres");
             Console.WriteLine("3. Feet");
             Console.WriteLine();
-            selectedUnitFrom = Console.ReadLine();// llamamos a la string selected unit from y le asignamos el input del usuarion con Console.ReadLine.
+            selectedUnitFrom = Console.ReadLine();// The user input is saved in this string named 'selectedUnitFrom'. There's no need to put string before its name because we have already declared this variable before.
             Console.WriteLine();
-            Console.WriteLine("Distance from, chosen: " + selectedUnitFrom);// avisamos al usuario de su eleccion
+            Console.WriteLine("Distance from, chosen: " + selectedUnitFrom);// We tell the user which distance has chosen to convert from.
         }
-        private void SelectDistanceTo()// en este metodo sera igual que el de SelectedInputFrom, con la unica diferencia que aqui aclamamos la seleccion de otra unidad para convertir a
+        private void SelectDistanceTo()// This method is similar as the last one but in this case the user will choose the distance to converto to.
         {
             Console.WriteLine();
             Console.Write("Please choose the unit distance to convert to: ");
-            selectedUnitTo = Console.ReadLine();//
+            selectedUnitTo = Console.ReadLine();
             Console.WriteLine();
             Console.WriteLine("Distance to, chosen: " + selectedUnitTo);//
         }
 
-        private void ConvertUnitFrom()// este metodo lo añadi el ultimo ya que necesitaba que en el metodo siguiente, selectedUnitFrom saliese como una unidad y no como un numero
+        private void ConvertUnitFrom()// I add this method in order to tell the user (in my next method Line 83) what distance unit has been chosen, instead of showing the number chosen.
         {
-            if (selectedUnitFrom == "1")// basicamente con este if le digo al programa que si el input del usuario es 1-->Miles, 2..>Metres, 3--> Feet.
+            if (selectedUnitFrom == "1")
             {
                 selectedUnitFrom = "Miles";
             }
@@ -75,14 +77,14 @@ namespace ConsoleAppProject.App01
                 selectedUnitFrom = "Feet";//
             }
         }
-        private void InputDistance()// en este metodo el usuario entrara el numero de unidades a convertir a. 
+        private void InputDistance()// In this method we get the user input to convert the distance. 
         {
             Console.WriteLine("");
             Console.Write("Please enter the desired number of " + selectedUnitFrom + " > ");
-            valueToConvert = Console.ReadLine();// llamamos a valueToConvert para adjudicarle el input del usuario
-            fromDistance = Convert.ToDouble(valueToConvert);// al ser una string, la convertimos en double y le damos el nombre de fromDistance
+            valueToConvert = Console.ReadLine();// I name the user input valueToConvert
+            fromDistance = Convert.ToDouble(valueToConvert);// I need the user input as a double for calculations, so I convert the user input (as a string) to a double.
         }
-        private void ConvertMenu()// Este metodo es facil de interpretar y le ayuda al metodo que biene posteriormente a entender las unidades para los calculos
+        private void ConvertMenu()// In this method I assign values for the if statements of my next method. 
         {
             if (selectedUnitFrom == "1")
             {
@@ -115,7 +117,7 @@ namespace ConsoleAppProject.App01
 
             }
         }
-        private void CalculateDistance()// en este metodo utilizamos if statements para añadir calculos segun los input recibidos por el usuario.
+        private void CalculateDistance()// In this method I used the values assigned before to assign to each posibility a calculation.  
         {
             if (selectedUnitFrom == "Miles" && selectedUnitTo == "Metres")//
             {
@@ -142,11 +144,11 @@ namespace ConsoleAppProject.App01
                 toDistance = fromDistance * 0.3048;
             }
         }
-        private void OutputResult()//
+        private void OutputResult()// This method is used to give the user the result.
         {
             
             Console.WriteLine();
-            Console.WriteLine("The result is " + toDistance + " " + selectedUnitTo);//
+            Console.WriteLine("The result is " + toDistance + " " + selectedUnitTo);
         }
     }
 }
