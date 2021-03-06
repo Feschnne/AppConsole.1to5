@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 namespace ConsoleAppProject.App02
 {
     /// <summary>
-    /// Please describe the main features of this App
+    /// This app allows the user to calculate their BMI from Metrical or Imperial Units. 
     /// </summary>
     /// <author>
-    /// Student Name version 0.1
+    /// Felipe Schol  0.1
     /// </author>
     public class BMI
     {
