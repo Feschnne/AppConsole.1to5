@@ -84,7 +84,7 @@ namespace ConsoleAppProject.App01
             valueToConvert = Console.ReadLine();// I name the user input valueToConvert
             fromDistance = Convert.ToDouble(valueToConvert);// I need the user input as a double for calculations, so I convert the user input (as a string) to a double.
         }
-        private void ConvertMenu()// In this method I assign values for the if statements of my next method. 
+        private void ConvertMenu()// In this method I assign values for the if statements of my next method. -
         {
             if (selectedUnitFrom == "1")
             {
